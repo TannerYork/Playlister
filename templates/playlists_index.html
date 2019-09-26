@@ -2,8 +2,14 @@
 
 {% block content %}
     <h1>Playlist</h1>
+    <a href="/playlists/new">Create New Playlist</a>
     {% for playlist in playlists %}
         <h2>{{playlist.title}}</h2>
         <small>{{playlist.description}}</small>
+        <h4>
+            {% for video in playlist.videos %}
+                <p>{{video}}</p>
+            {% endfor %}
+        </h4>
     {% endfor %}
 {% endblock %}
