@@ -4,13 +4,8 @@
     <h1>Playlist</h1>
     <a href="/playlists/new">Create New Playlist</a>
     {% for playlist in playlists %}
-        <h2>{{playlist.title}}</h2>
+        <h2><a href="/playlists/{{ playlist._id }}"">{{ playlist.title }}</a></h2>
         <small>{{playlist.description}}</small>
-        <small>Rating: {{playlist.rating}}</small>
-        <h4>
-            {% for video in playlist.videos %}
-                <p>{{video}}</p>
-            {% endfor %}
-        </h4>
+        <small>Rating: {{ playlist.rating }}</small>
     {% endfor %}
 {% endblock %}
