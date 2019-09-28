@@ -54,5 +54,12 @@ def playlists_update(playlist_id):
         {'$set': updated_playlist})
     return redirect(url_for('playlists_show', playlist_id=playlist_id))
 
+@app.route('/playlists/<playlist_id>/delete', methods=['POST'])
+def playlists_delete(playlist_id):
+    '''Delete playlist that user selected'''
+    playlists.delete_one({'_id': ObjectId(playlist_id)})
+    return redirect(url_for('playlists_index'))
+
+
 if __name__ == '__main__':
     app.run(debug=True)
