@@ -5,6 +5,9 @@
 <div class='row'>
     <div class='col-sm-10 col-sm-offset-2'>
         <h1>{{ playlist.title }}</h1>
+        {% if playlist.created_at %}
+            <p class='text-muted'>Created on: {{ playlist.created_at.strftime('%m/%d/%Y, %H:%M %p') }}</p>
+        {% endif %}
         <h2>{{ playlist.description }}</h2>
         <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
             {% for video in playlist.videos %}
