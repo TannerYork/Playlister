@@ -82,7 +82,7 @@ def comments_new():
         'content': request.form.get('content'),
         'playlist_id': ObjectId(request.form.get('playlist_id'))
     }
-    comment_id = comments.insert_one(comment).inserted_id
+    comments.insert_one(comment)
     return redirect(url_for('playlists_show', playlist_id=request.form.get('playlist_id')))
 
 
@@ -91,7 +91,7 @@ def comments_delete(comment_id):
     '''Delete a single comment'''
     comment = comments.find_one({'_id': ObjectId(comment_id)})
     comments.delete_one({'_id': ObjectId(comment_id)})
-    return redirect(url_for('playlist_show', playlist_id=comment.get('playlist_id')))
+    return redirect(url_for('playlists_show', playlist_id=comment.get('playlist_id')))
 
 
 if __name__ == '__main__':
