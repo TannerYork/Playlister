@@ -1,28 +1,28 @@
 <fieldset>
-    <legend>{{ title }}</legend>
+    <legend><h2>{{ title }}</h2></legend>
     <!-- TITLE -->
-    <p>
+    <div class="form-group">
         <label for='playlist-title'>Title</label><br>
-        <input id='playlist-title' type='text' name='title' value='{{ playlist.title }}'/>
-    </p>
+        <input id='playlist-title' type='text' class="form-control" name='title' value='{{ playlist.title }}'/>
+    </div>
     
     <!-- DESCRIPTION -->
-    <p>
+    <div class="form-group">
       <label for='description'>Description</label><br>
-      <input id='description' type='text' name='description' value='{{ playlist.description }}' />
-    </p>
+      <input id='description' type='text' class="form-control" name='description' value='{{ playlist.description }}' />
+    </div>
     
     <!-- VIDEO LINKS -->
-    <p>
+    <div class="form-group">
       <label for='playlist-videos'>Videos</label><br>
-      <p>Add videos in the form of 'https://youtube.com/embed/KEY'. Separate with a newline.</p>
-      <textarea id='playlist-videos' name='videos' rows='10' />{{ "\n".join(playlist.videos) }}</textarea>
-    </p>
+      <p class="form-text text-muted">Add videos in the form of 'https://youtube.com/embed/KEY'. Separate with a newline.</p>
+      <textarea id='playlist-videos' class="form-control" name='videos' rows='10' />{{ "\n".join(playlist.videos) }}</textarea>
+    </div>
     <!-- RATING -->
-    <p>
-      <label for="playlist-rating">Rating</label>
-      <p>Give the playlist a rating between zero and five. Select an option below</p>
-      <select id="playlist-rating" name="rating">
+    <div class="form-group">
+      <label for="playlist-rating">Rating</label><br>
+      <p class="form-text text-muted">Give the playlist a rating between zero and five. Select an option below</p>
+      <select id="playlist-rating" class="form-control" name="rating">
           <option value="0" selected>0</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -30,5 +30,5 @@
           <option value="4">4</option>
           <option value="5">5</option>
       </select>
-  </p>
+  </div>
 </fieldset>

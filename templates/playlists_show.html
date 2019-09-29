@@ -2,14 +2,22 @@
 
 {% block content %}
 <a href='/'>Back to Home</a>
-
-<h1>{{ playlist.title }}</h1>
-<h2>{{ playlist.description }}</h2>
-{% for video in playlist.videos %}
-    <iframe width="420" height="315" src="{{ video }}"></iframe>
-{% endfor %}
-<p><a href='/playlists/{{ playlist._id }}/edit'>Edit</a></p>
-<p><form method='POST' action='/playlists/{{ playlist._id }}/delete'>
-    <button type='submit'>Delete</button>
-</form></p>
+<div class='row'>
+    <div class='col-sm-10 col-sm-offset-2'>
+        <h1>{{ playlist.title }}</h1>
+        <h2>{{ playlist.description }}</h2>
+        <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+            {% for video in playlist.videos %}
+                <div class="card"><div class="card-body">
+                    <iframe style="border: none; margin: 5px;" width="420" height="315" src="{{ video }}"></iframe>
+                </div></div>
+            {% endfor %}
+        </div>
+        <p></p><a class="btn btn-primary btn-lg" href='/playlists/{{ playlist._id }}/edit'>Edit</a></p>
+        <p><form method='POST' action='/playlists/{{ playlist._id }}/delete'>
+            <input type='hidden' name='_method' value='DELETE'>
+            <button class='btn btn-danger btn-lg' type='submit'>Delete</button>
+        </form></p>
+    </div>
+</div>
 {% endblock %}
