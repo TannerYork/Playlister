@@ -86,7 +86,7 @@ def comments_new():
     return redirect(url_for('playlists_show', playlist_id=request.form.get('playlist_id')))
 
 
-@app.route('/playlist/comments/<comment_id>/delete')
+@app.route('/playlist/comments/<comment_id>')
 def comments_delete(comment_id):
     '''Delete a single comment'''
     comment = comments.find_one({'_id': ObjectId(comment_id)})
