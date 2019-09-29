@@ -82,6 +82,7 @@ def comments_new():
         'content': request.form.get('content'),
         'playlist_id': ObjectId(request.form.get('playlist_id'))
     }
+    # If this is set to a variable that is not used the insert_on does not work
     comments.insert_one(comment)
     return redirect(url_for('playlists_show', playlist_id=request.form.get('playlist_id')))
 
