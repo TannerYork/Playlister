@@ -4,11 +4,11 @@ from bson.objectid import ObjectId
 from datetime import datetime
 import os
 
-# host = os.environ.get(
-#     'MONGODB_URI', 'mongodb://<heroku_155tb7z8.playlister_bot>:<xXHN^EL85P8u2z>@ds143245.mlab.com:43245/heroku_155tb7z8')
-# client = MongoClient(host=f'{host}?retryWrites=false')
-client = MongoClient()
-db = client.Playlister
+host = os.environ.get(
+    'MONGODB_URI', 'mongodb://<heroku_155tb7z8.playlister_bot>:<xXHN^EL85P8u2z>@ds143245.mlab.com:43245/heroku_155tb7z8')
+client = MongoClient(host=f'{host}?retryWrites=false')
+# client = MongoClient()
+# db = client.Playlister
 playlists = db.playlists
 comments = db.comments
 app = Flask(__name__)
