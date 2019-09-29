@@ -19,6 +19,10 @@
             <button class='btn btn-danger btn-lg' type='submit'>Delete</button>
         </form></p>
         {% include 'partials/comment_form.html' %}
+        <hr>
+        {% for comment in comments %}
+            {% include 'partials/comment.html' %}
+        {% endfor %}
     </div>
 </div>
 {% endblock %}
