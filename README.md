@@ -12,6 +12,5 @@ The instructions bellow will inform you on how setup, run and use the applicatio
 
 ## Using Code
 1. Go the the location of the cloned repository <br>
-2. Edit the code in app.py under the `__name__ == '__main__'` if-statment <br>
 3. Run app.py <br>
 `python3 app.py`
